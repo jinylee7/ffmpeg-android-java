@@ -96,9 +96,9 @@ public class FFmpegInstrumentationTest extends ActivityInstrumentationTestCase2<
         return ffmpegLibraryVersion;
     }
 
-//    public void testFFmpegDeviceAndLibraryVersionEqual() {
-//        assertThat(testFFmpegDeviceVersion()).isEqualTo(testFFmpegLibraryVersion());
-//    }
+    public void testFFmpegDeviceAndLibraryVersionEqual() {
+        assertThat(testFFmpegDeviceVersion()).isEqualTo(testFFmpegLibraryVersion());
+    }
 
     public void testFFmpegMP4toMKVUsingx264() {
         File outmkv = new File(getFFmpegFilesDir(), "output.mkv");
