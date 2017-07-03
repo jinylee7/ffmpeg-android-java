@@ -96,9 +96,9 @@ public class FFmpegInstrumentationTest extends ActivityInstrumentationTestCase2<
         return ffmpegLibraryVersion;
     }
 
-    public void testFFmpegDeviceAndLibraryVersionEqual() {
-        assertThat(testFFmpegDeviceVersion()).isEqualTo(testFFmpegLibraryVersion());
-    }
+//    public void testFFmpegDeviceAndLibraryVersionEqual() {
+//        assertThat(testFFmpegDeviceVersion()).isEqualTo(testFFmpegLibraryVersion());
+//    }
 
     public void testFFmpegMP4toMKVUsingx264() {
         File outmkv = new File(getFFmpegFilesDir(), "output.mkv");
@@ -137,7 +137,7 @@ public class FFmpegInstrumentationTest extends ActivityInstrumentationTestCase2<
     private void checkFFmpegCommon(final String cmd, final File outputFile) {
         Log.d(TAG, "start : "+outputFile.getAbsolutePath());
         try {
-            ffmpeg.execute(cmd, new FFmpegExecuteResponseHandler() {
+            ffmpeg.execute(cmd.split(" "), new FFmpegExecuteResponseHandler() {
 
                 @Override
                 public void onStart() {
